@@ -10,7 +10,9 @@
 <form action="<?= base_url('checkout') ?>" method="post">
     <div class="mb-3">
         <label for="nama" class="form-label">Nama Pemesan</label>
-        <input type="text" class="form-control" name="nama" required>
+        <input type="text" class="form-control" name="nama" 
+            value="<?php echo session()->get('username') ?>"
+            <?php if (session()->get('role') === 'guest') echo 'readonly'; ?> >
     </div>
 
     <div class="mb-3">
